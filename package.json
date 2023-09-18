@@ -20,5 +20,6 @@
   "homepage": "https://github.com/Polykrovka/Homework-EPAM-NodeJS-course#readme",
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "type": "module"
 }
