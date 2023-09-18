@@ -114,3 +114,26 @@ myEmitter.off('eventOne', c1);
 console.log(myEmitter.listenerCount('eventOne'));
 myEmitter.off('eventOne', c2);
 console.log(myEmitter.listenerCount('eventOne'));
+
+async function asyncFunc(...args) {
+  const result = await fetch(...args);
+  return result;
+}
+
+class WithTime extends EventEmitter {
+  execute(asyncFunc, ...args) {
+    const startDate = Date.now();
+    const result = asyncFunc(...args);
+    result.then(response => { console.log(response) }).then(() => console.log(`Time: ${Date.now() - startDate}`)).then(() => withTime.emit('end'));
+   }
+}
+
+const withTime = new WithTime();
+
+withTime.on('begin', () => console.log('About to execute'));
+withTime.on('end', () => console.log('Done with execute'));
+
+console.log(withTime.rawListeners("end"));
+
+withTime.emit('begin');
+withTime.execute(asyncFunc, 'http://example.com/movies.json');
