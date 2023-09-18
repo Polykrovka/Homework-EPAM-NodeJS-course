@@ -1,4 +1,4 @@
-export class EventEmitter {
+class EventEmitter {
   listeners = {};  // key-value pair
 
   _newEvent(eventName, fn) {

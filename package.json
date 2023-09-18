@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "Task2": "nodemon ./modules/Task2.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,7 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "type": "module"
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
 }

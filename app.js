@@ -1,2 +1,2 @@
-import { EventEmitter } from "./modules/EventEmitter.js";
+const EventEmitter = require('./modules/EventEmitter.js')
 
